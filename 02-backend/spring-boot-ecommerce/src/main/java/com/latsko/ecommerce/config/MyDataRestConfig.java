@@ -21,6 +21,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 
+        //disable HTTP methods for ProductCategory: PUT, POST and DELETE
         config.getExposureConfiguration()
                 .forDomainType(ProductCategory.class)
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
