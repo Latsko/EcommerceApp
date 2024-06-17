@@ -21,7 +21,7 @@ export class ProductService {
                          theCategoryId: number): Observable<GetResponseProduct> {
 
     const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`
-                    + `&page=${thePage}$size=${thePageSize}`;
+                    + `&page=${thePage}&size=${thePageSize}`;
 
     return this.httpClient.get<GetResponseProduct>(searchUrl);
   }
