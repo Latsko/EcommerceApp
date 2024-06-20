@@ -5,7 +5,7 @@ export class CartItem {
     id: number;
     name: string;
     imageUrl: string;
-    unitePrice: number;
+    unitPrice: number;
 
     quantity: number;
 
@@ -13,7 +13,7 @@ export class CartItem {
         this.id = product.id;
         this.name = product.name;
         this.imageUrl = product.imageUrl;
-        this.unitePrice = product.unitPrice;
+        this.unitPrice = product.unitPrice;
 
         this.quantity = 1;
     }
