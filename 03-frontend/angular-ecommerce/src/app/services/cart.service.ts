@@ -22,18 +22,13 @@ export class CartService {
     if (this.cartItems.length > 0) {
       // find item in the cart based on item id
 
-      for (let tempCartItem of this.cartItems) {
-        if (tempCartItem.id === theCartItem.id) {
-          existingCartItem = tempCartItem;
-          break;
-        }
-      }
+      existingCartItem = this.cartItems.find(item => item.id === theCartItem.id);
 
       //check if we found it
       alreadyExistsInCart = (existingCartItem != undefined);
     }
 
-    if(alreadyExistsInCart) {
+    if (alreadyExistsInCart) {
       // increment the quantity
       existingCartItem!.quantity++;
 
@@ -65,7 +60,7 @@ export class CartService {
   }
 
   logCartData(totalPriceValue: number, totalQunatityValue: number) {
-    
+
     console.log('Contents of the cart');
     for (let tempCartItem of this.cartItems) {
       const subTotalPrice = tempCartItem.unitePrice * tempCartItem.unitePrice;
