@@ -36,6 +36,8 @@ export class CartService {
     if(alreadyExistsInCart) {
       // increment the quantity
       existingCartItem!.quantity++;
+
+      this.computeCartTotals();
     } else {
       // just add the item to the array
       this.cartItems.push(theCartItem);
@@ -68,7 +70,7 @@ export class CartService {
     for (let tempCartItem of this.cartItems) {
       const subTotalPrice = tempCartItem.unitePrice * tempCartItem.unitePrice;
       console.log(`name: ${tempCartItem.name}, quantity=${tempCartItem.quantity},
-         unitPrice=${tempCartItem.unitePrice}, subTotalPrice=${subTotalPrice}`);
+         unitPrice=${tempCartItem.unitePrice}, subTotalPrice=${subTotalPrice.toFixed(2)}`);
     }
 
     console.log(`totalPrice: ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQunatityValue}`);
