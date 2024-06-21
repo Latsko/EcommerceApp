@@ -45,7 +45,9 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="country">
-                                    <option>TODO</option>
+                                    <option *ngFor="let country from countries" [ngValue]="country">
+                                        {{ country.name }}
+                                    </option>
                                 </select>
                             </div>
                         </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Country } from 'src/app/common/country';
+import { State } from 'src/app/common/state';
 import { ECommerceFormService } from 'src/app/services/e-commerce-form.service';
 
 @Component({
@@ -16,6 +18,9 @@ export class CheckoutComponent implements OnInit {
 
  creditCardYears: number[] = [];
  creditCardMonths: number[] = [];
+
+ countries: Country[] = [];
+//  states: State[] = [];
 
  constructor(private formBuilder: FormBuilder,
              private eCommerceFormService: ECommerceFormService) {}
@@ -52,7 +57,6 @@ export class CheckoutComponent implements OnInit {
     });
 
     // populate credit card months
-
     const startMonth: number = new Date().getMonth() + 1;
     console.log("startMonth: " + startMonth);
 
@@ -64,11 +68,18 @@ export class CheckoutComponent implements OnInit {
     )
 
     // populate credit card years
-
     this.eCommerceFormService.getCreditCardYears().subscribe(
       data => {
         console.log("Retrieved credit card months: " + JSON.stringify(data));
         this.creditCardYears = data;
+      }
+    )
+
+    // polulate countries
+    this.eCommerceFormService.getCountries().subscribe(
+      data => {
+        console.log("Retrieved countries: " + JSON.stringify(data))
+        this.countries = data; 
       }
     )
     
