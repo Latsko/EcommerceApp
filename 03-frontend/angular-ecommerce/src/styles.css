@@ -516,7 +516,7 @@ input.au-input.au-input-xl{
     background:#fff
 }
 .main-content.page-m{
-    padding:10% 15%!important
+    padding: 10% 30% 10% 5%
 }
 
 /* 
@@ -737,11 +737,30 @@ table.table.table-bordered th{
  * ----------------------------
  */
 
+.btn.btn-primary {
+    color: white;                
+    background-color: #0dcaf0!important; 
+    border-color: #0dcaf0!important;      
+}
+
+ .btn.btn-primary.btn-sm.mt-2 {
+    color:#ffffff;
+    background-color: #0d6efd!important;
+    border-color:#0d6efd!important
+ }
+
+ .btn.primary-btn.btn-sm {
+    color:#ffffff;
+    background-color:#0da8e4!important;
+    border-color:#0da8e4!important
+ }
+
  .btn-info{
     color:#fff;
     background-color:#0da8e4!important;
     border-color:#0da8e4!important
 }
+
 a.primary-btn{
     background:#05143f;
     padding:7px 20px;
