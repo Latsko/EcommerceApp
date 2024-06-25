@@ -25,7 +25,7 @@ export class ECommerceFormService {
 
     const theCountryStateUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryCode}`;
 
-    return this.httpClient.get<GetResponseStates>(theCountryCode).pipe(
+    return this.httpClient.get<GetResponseStates>(theCountryStateUrl).pipe(
       map(response => response._embedded.states)
     );
   }
