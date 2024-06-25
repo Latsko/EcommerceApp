@@ -2,7 +2,7 @@
     <div class="section-content section-content-p30">
         <div class="container-fluid">
             <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
-                
+
                 <!-- customer form group -->
                 <div formGroupName="customer" class="form-area">
                     <h3>Customer</h3>
@@ -12,6 +12,19 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="firstName" type="text">
+
+                                <div *ngIf="firstName!.invalid && (firstName!.dirty || firstName!.touched)"
+                                    class="alert-danger mt-1">
+
+                                    <div *ngIf="firstName?.errors?.['required']">
+                                        First Name is required
+                                    </div>
+
+                                    <div *ngIf="firstName?.errors?.['minlength']">
+                                        First Name must be at least 2 characters long
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -21,6 +34,19 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="lastName" type="text">
+
+                                <div *ngIf="lastName!.invalid && (lastName!.dirty || lastName!.touched)"
+                                    class="alert-danger mt-1">
+
+                                    <div *ngIf="lastName?.errors?.['required']">
+                                        Last Name is required
+                                    </div>
+
+                                    <div *ngIf="lastName?.errors?.['minlength']">
+                                        Last Name must be at least 2 characters long
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -30,10 +56,21 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="email" type="text">
+
+                                <div *ngIf="email!.invalid && (email!.dirty || email!.touched)" class="alert-danger mt-1">
+                                    
+                                    <div *ngIf="email?.errors?.['required']">
+                                        Email is required
+                                    </div>
+
+                                    <div *ngIf="email?.errors?.['pattern']">
+                                        Email must be a valid email address format
+                                    </div>
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- shipping address -->
@@ -96,12 +133,12 @@
                 </div>
 
                 <!-- Add check box to copy shipping to billing -->
-                 <div class="input-space">
+                <div class="input-space">
                     <label class="au-checkbox">
                         <input type="checkbox" (change)="copyShippingToBillingData($event)">
                         <span class="au-checkmark"></span>Billing Address same as Shipping Address
                     </label>
-                 </div>
+                </div>
 
                 <!-- billing address -->
                 <div formGroupName="billingAddress" class="form-area">
@@ -225,8 +262,8 @@
                             <div class="input-space">
                                 <select formControlName="expirationYear" (change)="handleMonthsAndYears()">
                                     <option *ngFor="let year of creditCardYears">
-                                       {{ year }}
-                                   </option>
+                                        {{ year }}
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -235,19 +272,19 @@
                 </div>
 
                 <!-- Order details -->
-                 <div class="form-area">
+                <div class="form-area">
                     <h3>Review Your Order</h3>
 
                     <p>Total Quantity: {{ totalQuantity }}</p>
                     <p>Shipping Free</p>
                     <p>Total Price: {{ totalPrice | currency: 'USD' }}</p>
-                 </div>
+                </div>
 
                 <!-- submit bottom -->
-                 <div class="text-center">
+                <div class="text-center">
                     <button type="submit" class="btn btn-info">Purchase</button>
-                 </div>
-                 
+                </div>
+
 
             </form>
         </div>
