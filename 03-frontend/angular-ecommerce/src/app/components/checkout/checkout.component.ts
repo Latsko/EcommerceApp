@@ -127,11 +127,11 @@ export class CheckoutComponent implements OnInit {
     
     // subscribe to cartService.(totalQuantity and totalPrice)
     this.cartService.totalQuantity.subscribe(
-      this.totalQuantity => this.totalQuantity = this.totalQuantity;
+      totalQuantity => this.totalQuantity = this.totalQuantity
     );
 
     this.cartService.totalPrice.subscribe(
-      this.totalPrice => this.totalQuantity = this.totalPrice;
+      totalPrice => this.totalQuantity = this.totalPrice
     );
 
   }
