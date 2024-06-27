@@ -180,7 +180,7 @@ export class CheckoutComponent implements OnInit {
       .setValue(this.checkoutFormGroup.controls['shippingAddress'].value);
 
       // bug fix for states
-      this.billingAddressStates =this.shippingAddressStates;
+      this.billingAddressStates = this.shippingAddressStates;
     } else {
       this.checkoutFormGroup.controls['billingAddress'].reset();
 
