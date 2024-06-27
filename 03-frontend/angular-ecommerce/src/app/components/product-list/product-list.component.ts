@@ -95,7 +95,7 @@ export class ProductListComponent implements OnInit {
     this.previousCategoryId = this.currentCategoryId;
     console.log(`current categoryId=${this.currentCategoryId}, thePageNumber=${this.thePageNumber}`);
 
-    // not get the products for the given category id
+    // now get the products for the given category id
     this.productService.getProductListPaginate(this.thePageNumber - 1,
                                                this.thePageSize,
                                                this.currentCategoryId).subscribe(this.processResult());
