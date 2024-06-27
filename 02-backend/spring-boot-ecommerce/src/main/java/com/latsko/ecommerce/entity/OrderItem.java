@@ -20,8 +20,8 @@ public class OrderItem {
     @Column(name = "image_url")
     private String imageUrl;
 
-    @Column(name = "unite_price")
-    private BigDecimal unitePrice;
+    @Column(name = "unit_price")
+    private BigDecimal unitPrice;
 
     @Column(name = "quantity")
     private int quantity;
