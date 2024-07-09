@@ -23,6 +23,9 @@ export class OrderHistoryComponent implements OnInit {
     // read the user's email address from browser storage
     const theEmail = JSON.parse(this.storage.getItem('userEmail')!);
 
+    console.log(theEmail);
+    
+
     // retrieve data from the service
     this.orderHistoryService.getOrderHistory(theEmail).subscribe(
       data => {
