@@ -10,9 +10,9 @@ import { PaymentInfo } from '../common/payment-info';
 })
 export class CheckoutService {
 
-  private purchaseUrl = environment.latskoShopApiUrl + 'checkout/purchase';
+  private purchaseUrl = environment.latskoShopApiUrl + '/checkout/purchase';
 
-  private paymentIntentUrl = environment.latskoShopApiUrl + 'checkout/payment-intent';
+  private paymentIntentUrl = environment.latskoShopApiUrl + '/checkout/payment-intent';
 
   constructor(private httpClient: HttpClient) { }
 
