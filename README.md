@@ -27,8 +27,8 @@
 This is a web store with a basic functionality to make purchases. Store provides products from four categories, convinient search bar and pagination options for easy browsing.
 Each product has its own page with details and description. Registered users can login in order to see their order history and get access to VIP section.
 
-After user chose all necessary items, they can go to shopping cart that allowes them to overview their purchases: add, remove or discard them. User then is redirected to a
-checkout page, when they should fill out the checkout form. If all provided details are correct, user clicks the purchase button and gets confirmation about success.
+After user chose all the necessary items, they can go to their shopping cart that allowes them to overview their purchases: add, remove or discard them. User then is redirected to a
+checkout page, where they should fill out the checkout form. If all provided details are correct, user clicks the purchase button, their order is stored to a database and confirmation about success is shown.
  
 ## Technologies Used
 <div align="center">
